@@ -1,0 +1,41 @@
+{% extends "clothesL/catalogue.html" %}
+{% block content%}
+    FOR WOMEN
+
+
+{% endblock %}
+
+{% block cl%}
+
+
+{% for kiim in listW%}
+{%if kiim.genderW%}
+            <hr>
+                 Name: {{kiim.name}}
+
+Price:
+                {% if kiim.isProm_0%}
+                    {{kiim.price}}
+                {%else%}
+                     <s>{{kiim.price}}</s>
+                    {{kiim.priceWithProm}}
+                    {% endif%}
+
+
+{% if kiim.image %}
+<a href="/main/collection/product/people/{{kiim.slug}}" >
+    <img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+</a>
+
+{% endif %}
+
+<br>
+<i>Date: {{kiim.date}}</i>
+
+<a href="{{ kiim.get_add_to_cart_url }}" ><button class="btn btn-danger">
+    ADD TO CART</button></a>
+{%endif%}
+    {% endfor %}
+<hr>
+
+{% endblock %}

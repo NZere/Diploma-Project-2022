@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Essence - Fashion Ecommerce Template</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header_area">
+        <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+            <!-- Classy Menu -->
+            <nav class="classy-navbar" id="essenceNav">
+                <!-- Logo -->
+                <a class="nav-brand" href="/"><img src="{% static 'img/logoo.png' %}" height="50" width="150" alt="logo"></a>
+                <!-- Navbar Toggler -->
+
+            </nav>
+
+            <!-- Header Meta Data -->
+            <div class="header-meta d-flex clearfix justify-content-end">
+                <!-- Search Area -->
+                <div class="search-area">
+                    <form action="#" method="post">
+                        <input type="search" name="search" id="headerSearch" placeholder="Type for search">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <!-- Favourite Area -->
+                <div class="favourite-area">
+                    <a href="#"><img src="{% static 'img/core-img/heart.svg' %}" alt=""></a>
+                </div>
+                <!-- User Login Info -->
+
+                <!-- Cart Area -->
+                <div class="cart-area">
+                    {% if user.is_authenticated %}
+				Welcome, {{user_first_name}}
+
+				<a href="/users/logout" class="search">log out</a>
+				<a href="/main/collection/order-summary/" class="card-bag"><img src="static/img/icons/bag.png" alt=""><span>
+				</span></a>
+				{% else%}
+                    <div class="user-login-info">
+                    <a href="/users/login"><img src="{% static 'img/core-img/user.svg' %}" alt=""></a>
+                </div>
+				{% endif %}
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Right Side Cart Area ##### -->
+    <div class="cart-bg-overlay"></div>
+
+    <div class="right-side-cart-area">
+
+        <!-- Cart Button -->
+        <div class="cart-button">
+            <a href="#" id="rightSideCart"><img src="{% static 'img/core-img/bag.svg' %}" alt=""> <span>3</span></a>
+        </div>
+
+            <!-- Cart Summary -->
+
+
+    </div>
+    <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url({% static 'img/bg-img/breadcumb2.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Fashion Blog</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Blog Wrapper Area Start ##### -->
+    <div class="blog-wrapper section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{% static 'img/Zima.jpeg' %}" alt="">
+                        <!-- Post Title -->
+                        <div class="post-title">
+                            <a href="#">Fashion trends in 2022. Winter collection</a>
+                        </div>
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <!-- Post Title -->
+                            <div class="hover-post-title">
+                                <a href="#">Fashion trends in 2022. Winter collection</a>
+                            </div>
+                            <p>Cold weather will come faster than we think, so it's time to get acquainted with the main trends of the season autumn-winter 2019/2020.</p>
+                            <a href="/main/collection/winter">Continue reading <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{% static 'img/osen.jpg' %}" alt="">
+                        <!-- Post Title -->
+                        <div class="post-title">
+                            <a href="#">Fashion trends in 2022. Back to school</a>
+                        </div>
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <!-- Post Title -->
+                            <div class="hover-post-title">
+                                <a href="#">Fashion trends in 2022. Back to school</a>
+                            </div>
+                            <p>Gothic Princess style, feathers, leather suits, explosion of color, swimming caps, cage craze and all the most fashionable and beautiful that awaits us.</p>
+                            <a href="/main/collection/school">Continue reading <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{% static 'img/oscar.jpeg' %}" alt="">
+                        <!-- Post Title -->
+                        <div class="post-title">
+                            <a href="#">The brightest images on the red carpet Governors Awards</a>
+                        </div>
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <!-- Post Title -->
+                            <div class="hover-post-title">
+                                <a href="#">The brightest images on the red carpet Governors Awards</a>
+                            </div>
+                            <p>The Governors Awards are often called the Oscar rehearsal, because it opens the winter red carpet season.
+                                This year's ceremony was attended by all the light of Hollywood - from Jennifer Lopez in a gold dress Reem Acra to Lupita Nyong'o in a floral outfit Givenchy.
+                                We chose the most memorable images.</p>
+                            <a href="/main/collection/oscar">Continue reading <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{% static 'img/dress.jpeg' %}" alt="">
+                        <!-- Post Title -->
+                        <div class="post-title">
+                            <a href="#">Least of all: the most concise dresses this fall</a>
+                        </div>
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <!-- Post Title -->
+                            <div class="hover-post-title">
+                                <a href="/main/collection/dress">Least of all: the most concise dresses this fall</a>
+                            </div>
+                            <p>Laconic dresses attract attention with a perfect cut and pure color, and the eye is not distracted by unnecessary details and jewelry.
+                                Most often, they are not afraid of seasonal trends, because it is only necessary to replace the accessories and it looks quite different.
+                                For the same reasons, minimalistic images fit into the General concept of reasonable and responsible consumption – the less the better.</p>
+                            <a href="/main/collection/dress">Continue reading <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Wrapper Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Single Widget Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single_widget_area d-flex mb-30">
+                        <!-- Logo -->
+                        <div class="footer-logo mr-50">
+                            <a href="#"><img src="{% static 'img/la2.png' %}" alt=""></a>
+                        </div>
+                        <!-- Footer Menu -->
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Widget Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single_widget_area mb-30">
+                        <ul class="footer_widget_menu">
+                            <li><a href="#">Order Status</a></li>
+                            <li><a href="#">Payment Options</a></li>
+                            <li><a href="#">Shipping and Delivery</a></li>
+                            <li><a href="#">Guides</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-end">
+                <!-- Single Widget Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single_widget_area">
+                        <div class="footer_heading mb-30">
+                            <h6>Subscribe</h6>
+                        </div>
+                        <div class="subscribtion_form">
+                            <form action="#" method="post">
+                                <input type="email" name="mail" class="mail" placeholder="Your email here">
+                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Widget Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single_widget_area">
+                        <div class="footer_social_area">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="{% static 'js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js"></script>
+
+</body>
+
+</html>

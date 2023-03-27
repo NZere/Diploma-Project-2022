@@ -1,0 +1,24 @@
+{% extends "shops/shops.html" %}
+{% block content%}
+ALL SHOP
+{% endblock %}
+
+{% block cl%}
+
+
+{% for shop in listS%}
+<hr>
+Name: {{shop.shop_name}}
+
+{% if shop.logo_shop %}
+<a href="/main/collection/shops/{{shop.slug}}">
+    <img src="{{ shop.logo_shop.url}}" width="100" height="100" class="img-thumbnail">
+</a>
+
+{% endif %}
+
+
+{% endfor %}
+<hr>
+
+{% endblock %}

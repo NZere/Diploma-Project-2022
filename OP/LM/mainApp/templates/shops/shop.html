@@ -1,0 +1,170 @@
+{% extends "shops/shops.html" %}
+
+{% block content %}
+
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">shops.html
+
+                {% if object.logo_shop %}
+                <img src="{{ object.logo_shop.url}}" class="img-thumbnail">
+                {% endif %}
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Content-->
+                <div class="p-4">
+
+
+                    <!--                <p class="lead font-weight-bold">   Id:  {{object.id}} <br> </p>-->
+                    <p class="lead font-weight-bold"> Name: {{object.shop_name}} <br></p>
+                    <p class="lead font-weight-bold">Description: {{object.text}}</p>
+                    <p class="lead font-weight-bold">
+                        <a href="{{object.website}}" class="btn btn-primary btn-md my-0 p">
+                            Website
+                        </a>
+                        <a href="{{object.website}}" class="btn btn-primary btn-md my-0 p">
+                            Store
+                        </a>
+                    </p><br>
+
+                </div>
+{% comment %}
+            <form class="d-flex justify-content-left">
+                <!-- Default input -->
+                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                <button class="btn btn-primary btn-md my-0 p" type="submit">
+                    Add to cart
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                </button>
+
+            </form>
+            {% endcomment %}
+
+
+            <div class="pt-5 mt-5">
+                <div class="comment-form-wrap pt-5">
+                    <h3 class="mb-5">Leave a comment</h3>
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'clothesL:comment-shop' object.slug %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="text" id="message" cols="30" rows="10"
+                                      class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                        </div>
+                    </form>
+                    {% else %}
+                    <div class="login">
+                        <a href="/users/login" class="genre">Войдите чтобы оставить комментарий</a>
+                        <a href="/users/login" class="genre">Войдите чтобы оставить комментарий</a>
+                    </div>
+                    {% endif %}
+                    {% for commentary in comments %}
+                    <div class="comment">
+                        <span class="comment__author">{{ commentary.author }}</span>
+                        <p class="comment__text">{{ commentary.text }}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+                {% block cl1%}
+            </div>
+
+            <h1>{{object.shop_name}}'S COLLECTION<br><br></h1>
+
+            {% for item in clothes%}
+            <hr>
+            <div>
+
+                {% if item.image%}
+                <a href="/main/collection/product/people/{{item.slug}}">
+                    <img src="{{ item.image.url}}" width="100" height="100" class="img-thumbnail">
+                </a>
+
+                {% endif %}
+                {{item.name}}
+                <p class="lead">
+                    {% if item.isProm_0%}
+                    {{item.price}} TG
+                    {%else%}
+                    <s>{{item.price}}</s>
+                    {{item.priceWithProm}} TG
+                    {% endif%}
+                </p>
+
+
+            </div>
+
+
+            {% endfor %}
+
+            {% endblock %}
+
+
+            <br>
+
+            <!--Content-->
+
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <hr>
+
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-6 text-center">
+
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+</main>
+
+{% endblock %}

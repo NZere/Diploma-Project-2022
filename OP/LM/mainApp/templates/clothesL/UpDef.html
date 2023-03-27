@@ -1,0 +1,164 @@
+{% extends "clothesL/catalogue.html" %}
+
+{% load static %}
+{% block content %}
+    NEW COLLECTION!!!!
+
+
+{% endblock %}
+
+{% block cl1%}
+
+<div>
+
+<section class="intro-section spad pb-0">
+
+	<div class="intro-slider">
+			<ul class="slidee">
+
+				{% for kiim in listCl%}
+					{% if kiim.boolUp %}
+
+						<li>
+							<div class="intro-item">
+								<figure>
+									{% if kiim.image %}
+									<a href="/main/collection/product/people/{{kiim.slug}}" >
+										<img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+									</a>
+									{% endif %}
+								</figure>
+								<div class="product-info">
+									<a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+								</div>
+							</div>
+						</li>
+
+
+					{%endif%}
+    		{% endfor %}
+
+			</ul>
+	</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+</div>
+
+{% endblock %}
+
+
+{% block cl2 %}
+<div>
+
+<section class="intro-section spad pb-0">
+
+	<div class="intro-slider">
+			<ul class="slidee">
+
+				{% for kiim in listCl%}
+					{% if kiim.boolDown %}
+
+						<li>
+							<div class="intro-item">
+								<figure>
+									{% if kiim.image %}
+									<a href="/main/collection/product/people/{{kiim.slug}}" >
+										<img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+									</a>
+									{% endif %}
+								</figure>
+								<div class="product-info">
+									<a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+								</div>
+							</div>
+						</li>
+
+
+					{%endif%}
+    		{% endfor %}
+
+			</ul>
+	</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
+
+
+{% block cl3 %}
+<div>
+<section class="intro-section spad pb-0">
+
+	<div class="intro-slider">
+			<ul class="slidee">
+
+				{% for kiim in listCl%}
+					{% if kiim.boolShoes %}
+
+						<li>
+							<div class="intro-item">
+								<figure>
+									{% if kiim.image %}
+									<a href="/main/collection/product/people/{{kiim.slug}}" >
+										<img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+									</a>
+									{% endif %}
+								</figure>
+								<div class="product-info">
+									<a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+								</div>
+							</div>
+						</li>
+
+
+					{%endif%}
+    		{% endfor %}
+
+			</ul>
+	</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+</div>
+
+<hr>
+<h2>MAN/WOMAN</h2>
+<hr>
+{% for kiim in listCl%}
+{% if kiim.boolUp %}
+
+    {% if kiim.image %}
+    <a href="/main/collection/product/people/{{kiim.slug}}" >
+        <img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+    </a>
+
+    {% endif %}
+
+<br>
+
+<a href="{{ kiim.get_add_to_cart_url }}" ><button class="btn btn-danger">
+    ADD TO CART</button></a>
+{%endif%}
+    {% endfor %}
+<hr>
+
+{% endblock %}

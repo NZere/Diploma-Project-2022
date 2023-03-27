@@ -1,0 +1,59 @@
+{% extends "clothesL/catalogue.html" %}
+{% block content %}
+    FOR KIDS
+
+
+{% endblock %}
+
+{% block cl%}
+
+{% for kiim in listK%}
+Name: {{kiim.name}}
+            <br>
+                 For:{%if kiim.genderM%}
+                        boy
+                        {%endif%}
+                        {%if kiim.genderW %}
+                         girl
+                        {%endif%}
+            <br>
+            Age:
+                {%if kiim.for0_2%}
+                  0-2
+                {%endif%}
+                 {%if kiim.for3_6%}
+                  3-6
+                 {%endif%}
+                 {%if kiim.for7_10%}
+                    7-10
+                  {%endif%}
+                  {%if kiim.for11_16%}
+                    11-16
+                  {%endif%}
+            <br>
+                    {%if kiim.booShoes%}
+            <br>
+                        Shoes
+                     {%endif%}
+                    {%if kiim.booAcc%}
+            <br>
+                   Accessories
+                        {%endif%}
+Price:
+                {% if kiim.isProm_0 %}
+                    {{kiim.price}}
+                {%else%}
+                     <s>{{kiim.price}}</s>
+                    {{kiim.priceWithProm}}
+                    {% endif%}
+
+{% if kiim.image %}
+<img src="{{ kiim.image.url}}" width="100" height="100" class="img-thumbnail">
+{% endif %}
+
+<br>
+<hr>
+<br>
+{% endfor %}
+<hr>
+{% endblock %}

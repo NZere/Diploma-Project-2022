@@ -1,0 +1,15 @@
+{% extends "mainApp/base_shop.html" %}
+{% load static %}
+{% block content %}
+<p>
+    <a href="/first" class="btn btn-success btn-lg"><img src="{% static 'mainApp/image/logo-search-png-8.png' %}"
+                                                         width="50" height="50"></a>
+    <a href="/main/collection" class="btn btn-primary btn-lg">Clothes &raquo;</a>
+    <a href="/main/collection/prom" class="btn btn-primary btn-lg"> SALES&raquo;</a>
+    <a href="/main/collection/newCollection" class="btn btn-primary btn-lg">NEW COLLECTION &raquo;</a>
+    <a href="/register" class="btn btn-primary btn-lg">Register &raquo;</a>
+
+</p>
+
+
+{% endblock %}

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="LAMODA">
+    <meta name="keywords" content="plaza, eCommerce, creative, html">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zagalovok</title>
+    <!-- Favicon -->
+    <link href="static/img/icons8-python-50.ico" rel="shortcut icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <![endif]-->
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">  <!-- !!!!!!!!!>-->
+    <!--    <link rel="stylesheet" href="{ % static 'css/main.css'%} " type="text/css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background: pink">
+
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+<!-- Header section -->
+
+
+<header class="header-section">
+
+    <div class="container-fluid">
+        <!-- logo -->
+        <div class="site-logo">
+            <img src="{% static 'img/logoo.png' %}" height="120" width="200" alt="logo">
+        </div>
+        <!-- responsive -->
+        <div class="nav-switch">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="header-right">
+
+            <a style="margin-right: 30px">{% if user.is_authenticated %}
+                Welcome, {{user_first_name}}</a>
+            <a href="/main/collection/account"> Account </a>
+            <a href="/users/logout" class="search"> log out </a>
+            <a href="/main/collection/order-summary/" class="card-bag"><img src="static/img/icons/bag.png" alt=""></a>
+            {% else%}
+            <a href="/users/login" class="search"> sign in </a>
+            <a href="/users/register" class="search"> sign up </a>
+            {% endif %}
+
+            <a href="#" class="search"><img src="static/img/icons/search.png" alt=""></a>
+        </div>
+        <!-- site menu -->
+        <ul class="main-menu">
+            <li><a href="/">Home</a></li>
+            <li class="nav-item submenu dropdown">
+                <a href="/main/collection" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false">Lookbook</a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" style='color: black;'
+                                            href="/main/collection/women">Women</a></li>
+                    <li class="nav-item"><a class="nav-link" style='color: black;' href="/main/collection/men">Men</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" style='color: black;' href="/main/collection/winter">Winter
+                        Collection</a></li>
+                    <li class="nav-item"><a class="nav-link" style='color: black;' href="/main/collection/oscar">Red
+                        carpet Governors Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" style='color: black;' href="/main/collection/dress">Laconic
+                        dress</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/main/collection/blog">Blog</a></li>
+            <li><a href="/main/collection/prom">Sale</a></li>
+            <li><a href="/main/collection/shops">Shops</a></li>
+            <li><a href="/main/collection/newCollection">NEW COLLECTION!!</a></li>
+
+
+        </ul>
+    </div>
+    <div class="mt-5 pt-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</header>
+<!-- Header section end -->
+
+{% block cont1%}
+
+<!-- Hero section -->
+<section class="hero-section set-bg" data-setbg="static/img/bg.jpg">
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item">
+            <div class="hs-left"><img src="static/img/slider-img.png" alt=""></div>
+            <div class="hs-right">
+                <div class="hs-content">
+                    <div class="price">from $19.90</div>
+                    <h2><span>2022</span> <br>summer collection</h2>
+                    <a href="/main/collection/summerCol" class="site-btn">Shop NOW!</a>
+                </div>
+            </div>
+        </div>
+        <div class="hs-item">
+            <div class="hs-left"><img src="{% static 'img/winter.jpg' %}" alt=""></div>
+            <div class="hs-right">
+                <div class="hs-content">
+                    <div class="price">from $19.90</div>
+                    <h2><span>2022</span> <br>winter collection</h2>
+                    <a href="/main/collection/winterCol" class="site-btn">Shop NOW!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero section end -->
+{% endblock%}
+
+{% block cont2%}
+
+<!-- Intro section -->
+<section class="intro-section spad pb-0">
+    <div class="section-title">
+        <h2>sales leader</h2>
+        <p>We recommend</p>
+    </div>
+    <div class="intro-slider">
+        <ul class="slidee">
+            <li>
+                <div class="intro-item">
+                    <figure>
+                        <img src="static/img/intro/1.jpg" alt="#">
+                    </figure>
+                    <div class="product-info">
+                        <h5>Pink Sunglasses</h5>
+                        <p>4500TG</p>
+                        <a href="/main/collection/product/people/glasses_pink/" class="site-btn btn-line">ADD TO
+                            CART</a>
+
+                        })
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="intro-item">
+                    <figure>
+                        <img src="static/img/intro/2.jpg" alt="#">
+                    </figure>
+                    <div class="product-info">
+                        <h5>Black Nighty</h5>
+                        <p>11000TG</p>
+                        <a href="/main/collection/product/people/likeHalat/" class="site-btn btn-line">ADD TO CART</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="intro-item">
+                    <figure>
+                        <img src="static/img/intro/3.jpg" alt="#">
+                        <div class="bache">NEW</div>
+                    </figure>
+                    <div class="product-info">
+                        <h5>Yellow Sholder bag</h5>
+                        <p>10000TG</p>
+                        <a href="/main/collection/product/people/bag_yellow1/" class="site-btn btn-line">ADD TO CART</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="intro-item">
+                    <figure>
+                        <img src="static/img/intro/4.jpg" alt="#">
+                    </figure>
+                    <div class="product-info">
+                        <h5>Yellow Sunglasses</h5>
+                        <p>4000TG</p>
+                        <a href="/main/collection/product/people/glasses_yellow/" class="site-btn btn-line">ADD TO
+                            CART</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="intro-item">
+                    <figure>
+                        <img src="static/img/intro/5.jpg" alt="#">
+                    </figure>
+                    <div class="product-info">
+                        <h5>Black Sholder bag</h5>
+                        <p>7000</p>
+                        <a href="/main/collection/product/people/bag_black1/" class="site-btn btn-line">ADD TO CART</a>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="scrollbar">
+            <div class="handle">
+                <div class="mousearea"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Intro section end -->
+
+
+<div class="featured-section spad">
+
+    <div class="section-title">
+        <h2>Shops that uses our platform</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="featured-item">
+                    <img src="{% static 'img/womaph.jpg' %}" alt="">
+                    <a href="/main/collection/shops/woma_shop" class="site-btn">see more</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="featured-item mb-0">
+                    <img src="{% static 'img/araisph.jpg' %}" alt="">
+                    <a href="/main/collection/shops/arais_shop" class="site-btn">see more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="product-section spad">
+    <div class="container">
+        <ul class="product-filter controls">
+            <li class="control" data-filter=".new">New arrivals</li>
+            <li class="control" data-filter="all">Recommended</li>
+            <li class="control" data-filter=".best">Best sellers</li>
+        </ul>
+        <div class="row" id="product-filter">
+            <div class="mix col-lg-3 col-md-6 best">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/1.jpg' %}" alt="">
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/1" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Yellow Jacket</h6>
+                        <p>$39.90</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 new">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/2.jpg' %}" alt="">
+                        <div class="bache">NEW</div>
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/2" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Blue jumper</h6>
+                        <p>$19.50</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 best">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/4.jpg' %}" alt="">
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/4" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>White-Blue T-Shirt</h6>
+                        <p>$59.90</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 new best">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/5.jpg' %}" alt="">
+                        <div class="bache sale">SALE</div>
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/5" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Orange jumper</h6>
+                        <p>$32.20 <span>RRP 64.40</span></p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 best">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/6.jpg' %}" alt="">
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/6" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Green body</h6>
+                        <p>$39.90</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 new">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/7.jpg' %}" alt="">
+                        <div class="bache">NEW</div>
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/7" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Yellow skirtt</h6>
+                        <p>$19.50</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mix col-lg-3 col-md-6 best">
+                <div class="product-item">
+                    <figure>
+                        <img src="{% static 'img/11.jpg' %}" alt="">
+                        <div class="pi-meta">
+                            <div class="pi-m-left">
+                                <img src="{% static 'img/icons/eye.png' %}" alt="">
+                                <a href="/main/collection/product/people/11" class="site-btn btn-line"><p>quick view</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="product-info">
+                        <h6>Orange body</h6>
+                        <p>$59.90</p>
+                        <a href="{{ kiim.get_add_to_cart_url }}" class="site-btn btn-line">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+<!-- Blog section -->
+<section class="blog-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="featured-item">
+                    <img src="static/img/featured/featured-3.jpg" alt="">
+                    <a href="/main/collection/product/people/bag_black1" class="site-btn">see more</a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h4 class="bgs-title">from the blog</h4>
+                <div class="blog-item">
+                    <div class="bi-thumb">
+                        <img src="{% static 'img/Zima.jpeg' %}" alt="">
+                    </div>
+                    <div class="bi-content">
+                        <h5>Winter collection</h5>
+                        <div class="bi-meta">February 02, 2022 | By "What2Wear"</div>
+                        <a href="/main/collection/winter" class="readmore">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="bi-thumb">
+                        <img src="static/img/blog-thumb/2.jpg" alt="">
+                    </div>
+                    <div class="bi-content">
+                        <h5>Back to school</h5>
+                        <div class="bi-meta">February 02, 2022 | By "What2Wear"</div>
+                        <a href="/main/collection/school" class="readmore">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="bi-thumb">
+                        <img src="static/img/blog-thumb/3.jpg" alt="">
+                    </div>
+                    <div class="bi-content">
+                        <h5>Laconic dress</h5>
+                        <div class="bi-meta">February 02, 2022 | By "What2Wear"</div>
+                        <a href="/main/collection/dress" class="readmore">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog section end -->
+
+<!-- Footer top section -->
+<section class="footer-top-section home-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-8 col-sm-12">
+                <div class="footer-widget about-widget">
+                    <img src="{% static 'img/logoo.png' %}" class="footer-logo" alt="">
+                    <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus
+                        urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                    <div class="cards">
+                        <img src="{% static 'img/cards/5.png' %}" alt="">
+                        <img src="{% static 'img/cards/4.png' %}" alt="">
+                        <img src="{% static 'img/cards/3.png' %}" alt="">
+                        <img src="{% static 'img/cards/2.png' %}" alt="">
+                        <img src="{% static 'img/cards/1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-widget">
+                    <h6 class="fw-title">usefull Links</h6>
+                    <ul>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Bloggers</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-widget">
+                    <h6 class="fw-title">Sitemap</h6>
+                    <ul>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Bloggers</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-widget">
+                    <h6 class="fw-title">Shipping & returns</h6>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Track Orders</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-widget">
+                    <h6 class="fw-title">Contact</h6>
+                    <div class="text-box">
+                        <p>Your Company Ltd </p>
+                        <p>1481 Creekside Lane Avila Beach, CA 93424, </p>
+                        <p>+53 345 7953 32453</p>
+                        <p>office@youremail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer top section end -->
+
+<!-- Footer section -->
+<footer class="footer-section">
+    <div class="container">
+        <p class="copyright">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                href="https://lamoda.kz" target="_blank">lamodaANY</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+    </div>
+</footer>
+<!-- Footer section end -->
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/mixitup.min.js' %}"></script>
+<script src="{% static 'js/sly.min.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/stellar.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+
+
+</body>
+</html>
